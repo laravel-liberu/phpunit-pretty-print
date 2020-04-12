@@ -1,0 +1,33 @@
+{
+    "name": "laravel-enso/phpunit-pretty-print",
+    "description": "PHPUnit Pretty Print for Laravel",
+    "keywords": [
+        "laravel",
+        "laravel-enso",
+        "phpunit",
+        "pretty-print",
+        "phpunit-pretty-print",
+        "validator"
+    ],
+    "type": "library",
+    "homepage": "https://github.com/laravel-enso/PHPUnitPrettyPrint",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Adrian Ocneanu",
+            "email": "aocneanu@gmail.com",
+            "homepage": "https://laravel-enso.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "laravel/framework": "^7.0",
+        "php": ">=7.4.0",
+        "phpunit/phpunit": "^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "LaravelEnso\\PHPUnitPrettyPrint\\": "src/"
+        }
+    }
+}
