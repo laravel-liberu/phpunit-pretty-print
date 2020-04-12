@@ -51,10 +51,10 @@ class PrettyPrint extends DefaultResultPrinter
 
         $this->output = $this->currentOutput($progress);
 
-        $this->writeCurrentTestName()
-            ->writeTotalProgress()
-            ->writeCurrentStatus()
-            ->writeCurrentMethodName();
+        $this->writeTestName()
+            ->writeSuiteProgress()
+            ->writeTestResult()
+            ->writeMethodName();
     }
 
     private function currentOutput(string $progress): array
@@ -64,9 +64,9 @@ class PrettyPrint extends DefaultResultPrinter
         return static::Output[$sanitizedProgress] ?? static::Danger;
     }
 
-    private function writeCurrentTestName(): self
+    private function writeTestName(): self
     {
-        if ($this->shouldWriteCurrentTestName()) {
+        if ($this->shouldWriteTestName()) {
             $this->testName = $this->testName();
             $this->write("\n");
             $this->writeWithColor('bold', $this->testName);
@@ -75,7 +75,7 @@ class PrettyPrint extends DefaultResultPrinter
         return $this;
     }
 
-    private function shouldWriteCurrentTestName(): bool
+    private function shouldWriteTestName(): bool
     {
         return ! isset($this->testName)
             || $this->testName !== $this->testName();
@@ -86,24 +86,24 @@ class PrettyPrint extends DefaultResultPrinter
         return (new ReflectionClass($this->test))->getShortName();
     }
 
-    private function writeTotalProgress(): self
+    private function writeSuiteProgress(): self
     {
         $pad = strlen($this->numTests);
-        $current = printf("%0{$pad}d", $this->numTestsRun);
+        $current = sprintf("%0{$pad}d", $this->numTestsRun);
 
         $this->write("[{$current}/{$this->numTests}] ");
 
         return $this;
     }
 
-    private function writeCurrentStatus(): self
+    private function writeTestResult(): self
     {
         $this->writeWithColor($this->output['color'], $this->output['progress'], false);
 
         return $this;
     }
 
-    private function writeCurrentMethodName(): self
+    private function writeMethodName(): self
     {
         $this->write(' ');
         $this->writeWithColor($this->output['color'], $this->currentMethodName(), false);
