@@ -129,7 +129,8 @@ class PrettyPrint extends DefaultResultPrinter
         $thresholds = new Collection(static::TimeThresholds);
         $duration = $thresholds->first(fn ($threshold) => $time <= $threshold['limit']);
         $formattedTime = number_format($time, 3);
+        $color = $duration['color'] ?? static::Danger['color'];
 
-        $this->writeWithColor($duration['color'] ?? static::Danger['color'], "({$formattedTime}s)", true);
+        $this->writeWithColor($color, "({$formattedTime}s)", true);
     }
 }
