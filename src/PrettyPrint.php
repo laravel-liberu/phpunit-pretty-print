@@ -119,7 +119,7 @@ class PrettyPrint extends DefaultResultPrinter
         $method = Str::replaceFirst('with_data_set"', '[', $method);
         $method = Str::replaceFirst('"', ']', $method);
 
-        return (new Collection(explode('_', $method)))
+        return Collection::wrap(explode('_', $method))
             ->reject(fn ($word) => $word === 'test')
             ->implode(' ');
     }
