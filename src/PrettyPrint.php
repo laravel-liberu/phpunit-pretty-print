@@ -88,7 +88,7 @@ class PrettyPrint extends DefaultResultPrinter
 
     private function writeSuiteProgress(): self
     {
-        $pad = strlen($this->numTests);
+        $pad = Str::length($this->numTests);
         $current = sprintf("%0{$pad}d", $this->numTestsRun);
 
         $this->write("[{$current}/{$this->numTests}] ");
