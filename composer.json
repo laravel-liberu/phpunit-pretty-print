@@ -1,22 +1,22 @@
 {
-    "name": "laravel-enso/phpunit-pretty-print",
+    "name": "cgdsoftware/phpunit-pretty-print",
     "description": "PHPUnit Pretty Print for Laravel",
     "keywords": [
         "laravel",
-        "laravel-enso",
+        "cgdsoftware",
         "phpunit",
         "pretty-print",
         "phpunit-pretty-print",
         "validator"
     ],
     "type": "library",
-    "homepage": "https://github.com/laravel-enso/PHPUnitPrettyPrint",
+    "homepage": "https://github.com/cgdsoftware/PHPUnitPrettyPrint",
     "license": "MIT",
     "authors": [
         {
             "name": "Adrian Ocneanu",
             "email": "aocneanu@gmail.com",
-            "homepage": "https://laravel-enso.com",
+            "homepage": "https://cgdsoftware.com",
             "role": "Developer"
         }
     ],
