@@ -29,5 +29,8 @@
         "psr-4": {
             "LaravelEnso\\PHPUnitPrettyPrint\\": "src/"
         }
+    },
+    "require-dev": {
+        "rector/rector": "^0.17.0"
     }
 }
