@@ -1,6 +1,6 @@
 <?php
 
-namespace LaravelEnso\PHPUnitPrettyPrint;
+namespace LaravelLiberu\PHPUnitPrettyPrint;
 
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
